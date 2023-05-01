@@ -21,6 +21,8 @@ services:
     restart: "no"
     env_file:
         - project.env
+    ports:
+      - 5432:5432
 
   flyway:
     image: flyway/flyway:9.11.0-alpine
