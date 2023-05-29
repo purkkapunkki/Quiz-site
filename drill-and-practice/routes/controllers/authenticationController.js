@@ -2,6 +2,11 @@ import { bcrypt, validasaur } from "../../deps.js";
 import { getData } from "../../utilities.js";
 import * as authenticationService from "../../services/authenticationService.js";
 
+const logout = async ({ response, state }) => {
+  await state.session.deleteSession();
+  response.redirect("/");
+};
+
 const showLogin = ({ render }) => {
   render("login.eta");
 };
@@ -52,5 +57,5 @@ const validateRegistration = async ({ request, response, render }) => {
   }
 };
 
-export { showLogin, validateLogin, showRegistration, validateRegistration };
+export { logout, showLogin, validateLogin, showRegistration, validateRegistration };
 

@@ -1,7 +1,13 @@
-# Project 2: XXX
+# Project 2: Quiz site
 
-Write the documentation of your project here. Do not include your personal
-details (e.g. name or student number).
+This is a quiz site for repeated practice of learned content, where you can create and take any quizes of your choosing. Please register a user account to use the site.
 
-Remember to include the address of the online location where your project is
-running as it is a key part of the submission.
+To run this application execute the following command:
+```
+(docker ps -aq | xargs --no-run-if-empty docker stop | xargs --no-run-if-empty docker rm) && docker network prune --force && docker-compose up
+```
+
+To run the tests execute the following command:
+```
+docker-compose run --entrypoint=npx e2e-playwright playwright test && docker-compose rm -sf
+```

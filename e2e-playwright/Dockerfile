@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.29.2-focal
+FROM mcr.microsoft.com/playwright:v1.34.0-jammy
 
 COPY . /e2e-playwright
 

@@ -6,6 +6,10 @@ const renderMiddleware = async (context, next) => {
   });
 
   context.render = async (file, data) => {
+    if (!data) {
+      data = {};
+    }
+    data.user = await context.state.session.get('user') || null;
     context.response.headers.set("Content-Type", "text/html; charset=utf-8");
     context.response.body = await renderFile(file, data);
   };
