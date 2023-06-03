@@ -2,12 +2,15 @@
 
 This is a quiz site for repeated practice of learned content, where you can create and take any quizes of your choosing. Please register a user account to use the site.
 
-To run this application execute the following command:
+## Running the application
+Run the following command in the project's root directory:
 ```
-(docker ps -aq | xargs --no-run-if-empty docker stop | xargs --no-run-if-empty docker rm) && docker network prune --force && docker-compose up
+docker-compose up
 ```
+Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop the application.
 
-To run the tests execute the following command:
+## Running the tests
+Run the following command in the project's root directory:
 ```
 docker-compose run --entrypoint=npx e2e-playwright playwright test && docker-compose rm -sf
 ```
